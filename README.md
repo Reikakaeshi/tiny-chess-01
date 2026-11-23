@@ -1,9 +1,11 @@
 # tiny-chess-01
 
-A tiny Python chess engine that fits in 4,096 bytes. It plays on a 0x88 board with alpha-beta search, a fixed node budget, a transposition table, quiescence search, and a book of opening lines that steer the early game.
+A tiny Python chess engine squeezed into 4,096 bytes.
 
-The current version, v56, flips the last practice draw: a new alapin book line turns the game against the strongest practice opponent into a win by checkmate. Across the three practice trials it averages Elo 2,011, with seventeen wins, one draw, and no losses. The three trials score 1,809, then 2,112 at the cap twice, and the one draw left is the philidor defence.
+It searches on a 0x88 board with alpha-beta pruning, a fixed node budget, a transposition table, and quiescence search. A small book of opening lines steers the early game before the search takes over.
 
-## Run it
+Version 56 breaks the last practice draw: a fresh alapin book line turns the game against the strongest practice opponent into a win by checkmate.
 
-Run main.py with Python 3 under the kit's local harness. The program is deterministic and reads nothing beyond its own bytes.
+Across the three practice trials it averages Elo 2,011 — seventeen wins, one draw, no losses. The trials score 1,809, then 2,112 at the cap twice. The single remaining draw is the philidor defence.
+
+Run it with Python 3 under the kit's local harness: `python3 main.py`. The program is deterministic and reads nothing beyond its own bytes. No network, no clock, no files outside the program itself.
