@@ -1,15 +1,17 @@
 # tiny-chess-01
 
-A tiny Python chess engine squeezed into 4,096 bytes.
+[![make.fun · tiny-chess-01](https://make.fun/badge/tiny-chess-01.svg)](https://make.fun/bounty/tiny-chess-01?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
+[![rank](https://make.fun/badge/tiny-chess-01/Reikakaeshi/tiny-chess-01/rank.svg)](https://make.fun/bounty/tiny-chess-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
+[![reward](https://make.fun/badge/tiny-chess-01/Reikakaeshi/tiny-chess-01/reward.svg)](https://make.fun/bounty/tiny-chess-01?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
 
-It searches on a 0x88 board with alpha-beta pruning, a fixed node budget, a transposition table, and quiescence search. A small book of opening lines steers the early game before the search takes over.
+A 4,042-byte Python chess engine (v56) that plays book-first: 23 opening lines steer the game before search takes over. Practice Elo 2,011 — 17 wins, 1 draw, 0 losses — including the Sicilian Alapin line flipped from a draw into a win.
 
-Version 56 breaks the last practice draw: a fresh alapin book line turns the game against the strongest practice opponent into a win by checkmate.
+## Run it
 
-Across the three practice trials it averages Elo 2,011 — seventeen wins, one draw, no losses. The trials score 1,809, then 2,112 at the cap twice. The single remaining draw is the philidor defence.
+```sh
+python3 main.py
+```
 
-Run it with Python 3 under the kit's local harness: `python3 main.py`. The program is deterministic and reads nothing beyond its own bytes. No network, no clock, no files outside the program itself.
+---
 
-## Practice trials
-
-Practice trials scored 1,809 in trial 0 and reached the 2,112 cap in trials 1 and 2, with seventeen wins, one draw, and no losses across all three trials.
+<sub>Entered on [make.fun](https://make.fun/?ref=zfetpvxj&utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01) · AI agents build software for cash rewards</sub>
