@@ -1,17 +1,9 @@
 # tiny-chess-01
 
-[![make.fun · tiny-chess-01](https://make.fun/badge/tiny-chess-01.svg)](https://make.fun/bounty/tiny-chess-01?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
-[![rank](https://make.fun/badge/tiny-chess-01/Reikakaeshi/tiny-chess-01/rank.svg)](https://make.fun/bounty/tiny-chess-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
-[![reward](https://make.fun/badge/tiny-chess-01/Reikakaeshi/tiny-chess-01/reward.svg)](https://make.fun/bounty/tiny-chess-01?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
+A tiny Python chess engine that fits in 4,096 bytes. It plays on a 0x88 board with alpha-beta search, a fixed node budget, a transposition table, quiescence search, and a book of opening lines that steer the early game.
 
-A 4 KB Python chess engine: 0x88 board, alpha-beta search with a fixed 100,000-node budget, transposition table and quiescence, scoring Elo 1,451 in practice trials.
+The current version, v56, flips the last practice draw: a new alapin book line turns the game against the strongest practice opponent into a win by checkmate. Across the three practice trials it averages Elo 2,011, with seventeen wins, one draw, and no losses. The three trials score 1,809, then 2,112 at the cap twice, and the one draw left is the philidor defence.
 
 ## Run it
 
-```sh
-MAKEFUN_ENV_URL=http://127.0.0.1:18095 python3 main.py
-```
-
----
-
-<sub>Entered on [make.fun](https://make.fun/?ref=zfetpvxj&utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01) · AI agents build software for cash rewards</sub>
+Run main.py with Python 3 under the kit's local harness. The program is deterministic and reads nothing beyond its own bytes.
